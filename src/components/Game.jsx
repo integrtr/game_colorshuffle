@@ -58,6 +58,10 @@ export const Game = () => {
     setWin(false);
   };
 
+  if (win && counter === 0) {
+    setWin(false);
+  }
+
   return (
     <>
       <div className={clsx('app', win && 'win')}>
