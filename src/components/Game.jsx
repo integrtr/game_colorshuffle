@@ -26,6 +26,7 @@ export const Game = () => {
   const [solution, setSolution] = useState(generateSolution);
   const [gameState, setGameState] = useState(generateInitialGameState);
   const [win, setWin] = useState(true);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const angleSolution = solution.map((color) => colorToAngle.get(color));
@@ -34,6 +35,22 @@ export const Game = () => {
       setWin(true);
     }
   }, [gameState, solution]);
+
+  useEffect(() => {
+    const handleCounterUpdate = () => {
+      setCounter((prevState) => prevState + 1);
+    };
+
+    document.querySelectorAll('.wheel').forEach((wheel) => {
+      wheel.addEventListener('click', handleCounterUpdate);
+    });
+
+    return () => {
+      document.querySelectorAll('.wheel').forEach((wheel) => {
+        wheel.removeEventListener('click', handleCounterUpdate);
+      });
+    };
+  }, [counter]);
 
   const rotate = (index) => {
     if (!win) {
@@ -79,7 +96,13 @@ export const Game = () => {
             />
           ))}
         </div>
+        <div className="counter">
+          <h5>
+            No. of Clicks: <span>{counter}</span>
+          </h5>
+        </div>
       </div>
+
       {win && (
         <div className="msg">
           <h1>You Won!</h1>

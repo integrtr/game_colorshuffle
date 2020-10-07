@@ -28,10 +28,10 @@ body,
 }
 
 .game-title {
+  position: absolute;
   font-size: 8vh;
-  letter-spacing: 0.05rem;  
   font-family: 'Teko', sans-serif ;
-  margin-bottom: 130px;
+  top: 10vh
 }
 
 .game-title:nth-child(1) {
@@ -39,7 +39,7 @@ body,
 }
 
 .game-title span:nth-child(2) {
-  color: paleturquoise
+  color: rgb(129, 248, 248)
 }
 
 .app {
@@ -128,8 +128,8 @@ body,
   position: absolute;
   z-index: 1;  
   cursor: not-allowed;
-  font-family: 'Teko', sans-serif ;
-
+  font-family: 'Teko', sans-serif ;  
+  margin-top: -140px;
 }
 
 .msg > h1{
@@ -138,11 +138,12 @@ body,
 }
 
 .play-again {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 130px;
+  bottom: 20vh;
 }
 
 .btn {
@@ -158,4 +159,13 @@ body,
   -webkit-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
   -moz-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
   box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);}
+
+  .counter {
+    text-align: center; 
+    margin-top: 5vh;
+    font-size: 4vh;
+    color: lightcoral ;
+    font-family: 'Teko', sans-serif ;
+  }
+
 
