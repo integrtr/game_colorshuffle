@@ -63,6 +63,16 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
               <FormattedMessage id="TIP6" />
             </li>
           </ul>
+          <div className="logo-container">
+            <div>
+              <div className="logo-text">Powered by</div>
+              <img
+                className="logo"
+                src="https://cdn.integrtr.com/logos/integrtr_logo_dark.png"
+                alt="Integrtr Logo"
+              />
+            </div>
+          </div>
           <button className="close-btn" onClick={() => setOpenDialog(false)}>
             <FormattedMessage id="CLOSE" />
           </button>

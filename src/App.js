@@ -46,6 +46,11 @@ export default function App() {
         </div>
         <GameOptions appLangs={appLangs} locale={locale} updateLocaleState={updateLocaleState} />
         <Game />
+        <div className="visit-thub">
+          <a href="https://translate.integrtr.com" className="thub-url">
+            Visit INTEGRTR Translation Hub
+          </a>
+        </div>
       </div>
     </IntlProvider>
   );

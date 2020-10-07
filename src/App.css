@@ -3,6 +3,7 @@
   border: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 html,
@@ -234,19 +235,63 @@ body,
     cursor: pointer;
   }
 
- select{
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 212, 212);
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 6vh;
+  color: rgb(233, 104, 104);
+  font-size: 2vh;
+}
+
+select{
     background-color: transparent;
-    font-size: 1.8vh;  
+    font-size: 1.6vh;  
     appearance:none;
     -webkit-appearance:none;
     -moz-appearance:none;
     color: rgb(2, 2, 2);
-    text-decoration: underline;
     cursor: pointer;
-  }
+    color: rgb(233, 104, 104);
+}
 
 select::-ms-expand {
-  display: none;  
+  display: none; 
+}
+
+.logo-container{
+  display: flex;
+  width: 93%;
+  justify-content: center;
+  margin-top: 3vh;
+  
+}
+
+.logo-text {
+  text-align: center;
+  color:rgb(148, 148, 148);
+  font-size: 1.5vh;
+}
+
+.logo {
+  width: 120px; 
+}
+
+.thub-url {
+  color: #11ae83;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.4vh;
+  border-radius: 0.5vh;
+  font-weight: 600;
+}
+
+.visit-thub {
+ position: absolute;
+ bottom: 3vh;
 }
 
 
@@ -256,8 +301,3 @@ select::-ms-expand {
   }
 }
 
-@media (max-width: 0px) {
-  .container {
-    width: '100%';
-  }
-}
