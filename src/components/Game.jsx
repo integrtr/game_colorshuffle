@@ -25,7 +25,7 @@ const generateInitialGameState = () => startAngles.map(() => random.pick(startAn
 export const Game = () => {
   const [solution, setSolution] = useState(generateSolution);
   const [gameState, setGameState] = useState(generateInitialGameState);
-  const [win, setWin] = useState(true);
+  const [win, setWin] = useState(false);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
