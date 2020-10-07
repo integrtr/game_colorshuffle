@@ -159,8 +159,6 @@ body,
   padding: 10px;
   cursor: pointer;
   font-family: 'Teko', sans-serif ;
-  -webkit-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
-  -moz-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
   box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);}
 
   .counter {
@@ -201,8 +199,6 @@ body,
     min-height: 500px;
     padding-bottom: 50px;
     background-color: white;
-    -webkit-box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);
-    -moz-box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);
     box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);}
   
   .dialog-box > h1 {
@@ -251,15 +247,9 @@ select{
     background-color: transparent;
     font-size: 1.6vh;  
     appearance:none;
-    -webkit-appearance:none;
-    -moz-appearance:none;
     color: rgb(2, 2, 2);
     cursor: pointer;
     color: rgb(233, 104, 104);
-}
-
-select::-ms-expand {
-  display: none; 
 }
 
 .logo-container{
