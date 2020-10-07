@@ -1,40 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import random from 'canvas-sketch-util/random';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 
-import { FormattedMessage } from 'react-intl';
-
-const colorToAngle = new Map([
-  ['peachpuff', 45],
-  ['paleturquoise', 45 + 90],
-  ['darkseagreen', 45 + 180],
-  ['lightcoral', 45 + 270],
-]);
-
-const step = 90;
-
-const getSafeAngle = (angle) => angle % 360;
-
-const startAngles = [...colorToAngle.values()];
-const colors = [...colorToAngle.keys()];
-
-const generateSolution = () => random.shuffle(colors);
-const generateInitialGameState = () => startAngles.map(() => random.pick(startAngles));
-
-export const Game = () => {
-  const [solution, setSolution] = useState(generateSolution);
-  const [gameState, setGameState] = useState(generateInitialGameState);
-  const [win, setWin] = useState(false);
-  const [counter, setCounter] = useState(0);
-
+export const Game = ({
+  solution,
+  colorToAngle,
+  gameState,
+  getSafeAngle,
+  setWin,
+  setCounter,
+  setGameState,
+  win,
+  step,
+  colors,
+}) => {
   useEffect(() => {
     const angleSolution = solution.map((color) => colorToAngle.get(color));
 
     if (isEqual(gameState.map(getSafeAngle), angleSolution)) {
       setWin(true);
     }
-  }, [gameState, solution]);
+  }, [gameState, solution, getSafeAngle, colorToAngle, setWin]);
 
   const rotate = (index) => {
     setCounter((prevState) => prevState + 1);
@@ -50,16 +36,6 @@ export const Game = () => {
       );
     }
   };
-
-  const playAgain = () => {
-    setSolution(generateSolution);
-    setGameState(generateInitialGameState);
-    setWin(false);
-  };
-
-  if (win && counter === 0) {
-    setWin(false);
-  }
 
   return (
     <>
@@ -85,27 +61,7 @@ export const Game = () => {
             />
           ))}
         </div>
-        <div className="counter">
-          <h5>
-            <FormattedMessage id="NO_OF_CLICKS" /> <span>{counter}</span>
-          </h5>
-        </div>
       </div>
-
-      {win && (
-        <div className="msg">
-          <h1>
-            <FormattedMessage id="YOU_WON" />
-          </h1>
-        </div>
-      )}
-      {win && (
-        <div className="play-again">
-          <button className="btn" onClick={playAgain}>
-            <FormattedMessage id="PLAY_AGAIN" />
-          </button>
-        </div>
-      )}
     </>
   );
 };
