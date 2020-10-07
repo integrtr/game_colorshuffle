@@ -79,9 +79,14 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
               />
             </div>
           </div>
-          <button className="close-btn" onClick={() => setOpenDialog(false)}>
-            <FormattedMessage id="CLOSE" />
-          </button>
+          <div className="dialog-actions">
+            <a href="www.example.com" className="view-blog">
+              <FormattedMessage id="VIEW_BLOG" />
+            </a>
+            <button className="close-btn" onClick={() => setOpenDialog(false)}>
+              <FormattedMessage id="CLOSE" />
+            </button>
+          </div>
         </div>
       )}
     </>

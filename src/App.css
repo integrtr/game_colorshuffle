@@ -192,11 +192,10 @@ body,
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -23vh;
     z-index: 2;
     padding: 10px;
-    width: 400px;
-    min-height: 500px;
+    width: 90%;
+    height: 95%;
     padding-bottom: 50px;
     background-color: white;
     box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);}
@@ -219,16 +218,38 @@ body,
     color: rgb(78, 78, 78);
   }
 
-  .close-btn {
+  .dialog-actions {
     position: absolute;
     bottom: 1vh;
-    right: 1vh;
+   display: flex;
+   justify-content: space-between;
+   width: 95%;
+  }
+
+  .close-btn {
     padding: 0.5vh;
     background-color: lightcoral;
     color: white;
-    width: 7vh;
+    width: 10vh;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius: 0.5vh;
+    cursor: pointer;    
+
+  }
+
+  .view-blog {
+    padding: 0.5vh;
+    text-decoration: none;
+    background-color: #11ae83;
+    color: white;
     border-radius: 0.5vh;
     cursor: pointer;
+    width: 12vh;
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 .language {
