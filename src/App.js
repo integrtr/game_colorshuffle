@@ -9,14 +9,6 @@ import en from './intl/i18n.json';
 export default function App() {
   const lang = window.location.pathname.split('/')[1];
 
-  //function to be used when more languages are added
-  // function mergeWithDefault(messages) {
-  //   return {
-  //     ...en,
-  //     ...messages,
-  //   };
-  // }
-
   const selectedMessages = (lang) => {
     switch (lang) {
       case 'en':
