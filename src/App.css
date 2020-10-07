@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Fredoka One", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100%;
+  width: 40%;
+  background-color: #fffaf6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 8vh;
+  letter-spacing: 0.05rem;  
+  font-family: 'Teko', sans-serif ;
+  margin-bottom: 130px;
+}
+
+.game-title:nth-child(1) {
+  color:  lightcoral
+}
+
+.game-title span:nth-child(2) {
+  color: paleturquoise
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+.win {
+  filter: opacity(0.4);
+  cursor: not-allowed;
+}
+
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color {
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+
+.markers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mark {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  margin: 5px 30px;
+}
+
+.wheels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.wheel {
+  height: 70px;
+  width: 70px;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  transition: all 0.3s cubic-bezier(0.75, -0.5, 0, 1.75);
+  cursor: pointer;
+}
+
+.wheel .quadrant {
+  height: 35px;
+  width: 35px;
+}
+
+.quadrant:nth-child(1) {
+  border-top-left-radius: 9999999px;
+  background: peachpuff;
+}
+.quadrant:nth-child(2) {
+  border-top-right-radius: 9999999px;
+  background: lightcoral;
+}
+.quadrant:nth-child(3) {
+  border-bottom-left-radius: 9999999px;
+  background: paleturquoise;
+}
+.quadrant:nth-child(4) {
+  border-bottom-right-radius: 9999999px;
+  background: darkseagreen;
+}
+
+.msg {
+  position: absolute;
+  z-index: 1;  
+  cursor: not-allowed;
+  font-family: 'Teko', sans-serif ;
+
+}
+
+.msg > h1{
+  font-size: 11vh;
+  color:lightcoral;
+}
+
+.play-again {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 130px;
+}
+
+.btn {
+  width: 40vh;
+  height: 8vh;
+  border-radius: 0.6vh;
+  background:rgb(129, 248, 248);
+  font-size: 4vh;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Teko', sans-serif ;
+  -webkit-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);}
+
