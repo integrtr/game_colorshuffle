@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { MdLanguage } from 'react-icons/md';
 
 export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -14,18 +15,21 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
   return (
     <>
       <div className="options">
-        <div>
-          <select onChange={updateLocaleState} name="locale" id="locale">
-            <option value={language}>{language}</option>
-            {appLangs.map(
-              (lang) =>
-                lang !== language && (
-                  <option key={lang} value={lang}>
-                    {lang}
-                  </option>
-                )
-            )}
-          </select>
+        <div className="language">
+          <MdLanguage />
+          <div>
+            <select onChange={updateLocaleState} name="locale" id="locale">
+              <option value={language}>{language}</option>
+              {appLangs.map(
+                (lang) =>
+                  lang !== language && (
+                    <option key={lang} value={lang}>
+                      {lang}
+                    </option>
+                  )
+              )}
+            </select>
+          </div>
         </div>
         <div>
           <button
