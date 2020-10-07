@@ -111,7 +111,7 @@ export default function App() {
         <GameOptions appLangs={appLangs} locale={locale} updateLocaleState={updateLocaleState} />
         <div className="visit-thub">
           <a href="https://translate.integrtr.com" className="thub-url">
-            Visit INTEGRTR Translation Hub
+            <FormattedMessage id="VISIT" />
           </a>
         </div>
       </div>

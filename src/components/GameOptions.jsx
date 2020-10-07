@@ -69,7 +69,9 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
           </ul>
           <div className="logo-container">
             <div>
-              <div className="logo-text">Powered by</div>
+              <div className="logo-text">
+                <FormattedMessage id="POWERED_BY" />
+              </div>
               <img
                 className="logo"
                 src="https://cdn.integrtr.com/logos/integrtr_logo_dark.png"
