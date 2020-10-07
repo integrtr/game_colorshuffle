@@ -37,23 +37,8 @@ export const Game = () => {
     }
   }, [gameState, solution]);
 
-  useEffect(() => {
-    const handleCounterUpdate = () => {
-      setCounter((prevState) => prevState + 1);
-    };
-
-    document.querySelectorAll('.wheel').forEach((wheel) => {
-      wheel.addEventListener('click', handleCounterUpdate);
-    });
-
-    return () => {
-      document.querySelectorAll('.wheel').forEach((wheel) => {
-        wheel.removeEventListener('click', handleCounterUpdate);
-      });
-    };
-  }, [counter]);
-
   const rotate = (index) => {
+    setCounter((prevState) => prevState + 1);
     if (!win) {
       setGameState((state) =>
         state.map((val, i) => {
