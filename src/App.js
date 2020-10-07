@@ -7,10 +7,15 @@ import { GameOptions } from './components/GameOptions';
 import en from './intl/i18n.json';
 
 export default function App() {
-  const [locale, setLocale] = useState({
-    selectedLang: 'en',
-    messages: en,
-  });
+  const lang = window.location.pathname.split('/')[1];
+
+  //function to be used when more languages are added
+  // function mergeWithDefault(messages) {
+  //   return {
+  //     ...en,
+  //     ...messages,
+  //   };
+  // }
 
   const selectedMessages = (lang) => {
     switch (lang) {
@@ -19,6 +24,11 @@ export default function App() {
         return en;
     }
   };
+
+  const [locale, setLocale] = useState({
+    selectedLang: lang ? lang : 'en',
+    messages: lang ? selectedMessages(lang) : en,
+  });
 
   const updateLocaleState = (event) => {
     const lang = event.target.value;
@@ -42,7 +52,7 @@ export default function App() {
             <FormattedMessage id="SHUFFLE" />
           </span>
         </div>
-        <GameOptions appLangs={appLangs} updateLocaleState={updateLocaleState} />
+        <GameOptions appLangs={appLangs} locale={locale} updateLocaleState={updateLocaleState} />
         <Game />
       </div>
     </IntlProvider>
