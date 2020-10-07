@@ -171,9 +171,10 @@ body,
 
   .options {
     position: absolute;
-    right: 2vh;
-    top: 2vh;
+    right: 1vh;
+    top: 1vh;
     display: flex;
+    align-items: center;
   }
 
   .how-to-play-btn {
@@ -183,6 +184,7 @@ body,
     color:white;
     font-weight: 600;
     cursor: pointer;
+    margin: 1vh
   }
 
     .dialog-box {
@@ -230,3 +232,18 @@ body,
     border-radius: 0.5vh;
     cursor: pointer;
   }
+
+ select{
+    background-color: transparent;
+    font-size: 1.8vh;  
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    color: rgb(2, 2, 2);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+select::-ms-expand {
+  display: none;  
+}
