@@ -3,7 +3,6 @@ import random from 'canvas-sketch-util/random';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 
-import { Wheel } from './Wheel';
 import { FormattedMessage } from 'react-intl';
 
 const colorToAngle = new Map([
@@ -110,3 +109,15 @@ export const Game = () => {
     </>
   );
 };
+
+const Wheel = ({ onClick, index, angle, colors }) => (
+  <button
+    className="wheel"
+    onClick={() => onClick(index)}
+    style={{ transform: `rotate(${angle}deg)` }}
+  >
+    {colors.map((_, index) => (
+      <div key={index} className="quadrant" />
+    ))}
+  </button>
+);
