@@ -1,37 +1,57 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
-export const GameOptions = () => {
+export const GameOptions = ({ appLangs, updateLocaleState }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
     <>
       <div className="options">
         <div>
+          <select onChange={updateLocaleState} name="locale" id="locale">
+            {appLangs.map((lang) => (
+              <option value={lang}>{lang}</option>
+            ))}
+          </select>
+        </div>
+        <div>
           <button
             disabled={openDialog}
             className="how-to-play-btn"
             onClick={() => setOpenDialog(true)}
           >
-            How to Play?
+            <FormattedMessage id="HOW_TO_PLAY" />
           </button>
         </div>
       </div>
       {openDialog && (
         <div className="dialog-box">
-          <h1>How to Play? </h1>
+          <h1>
+            <FormattedMessage id="HOW_TO_PLAY" />
+          </h1>
           <ul>
-            <li>In the game, there are two rows of 4 circles each.</li>
-            <li>The top circles with a marker pointing down are the solution we have to achieve</li>
             <li>
-              The bottom circles are rotateable, and the player has to rotate them to match the
-              quadrant with the respective above color
+              <FormattedMessage id="TIP1" />
             </li>
-            <li>Whenever a bottom circle is clicked it rotates in the right direction</li>
-            <li>Whenever a circle rotates, all it's adjacent circles rotate aswell</li>
-            <li>The aim of the player is to match the quadrant with the above color </li>
+            <li>
+              <FormattedMessage id="TIP2" />
+            </li>
+            <li>
+              <FormattedMessage id="TIP3" />
+            </li>
+
+            <li>
+              <FormattedMessage id="TIP4" />
+            </li>
+            <li>
+              <FormattedMessage id="TIP5" />
+            </li>
+            <li>
+              <FormattedMessage id="TIP6" />
+            </li>
           </ul>
           <button className="close-btn" onClick={() => setOpenDialog(false)}>
-            Close
+            <FormattedMessage id="CLOSE" />
           </button>
         </div>
       )}

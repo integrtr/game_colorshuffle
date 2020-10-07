@@ -1,0 +1,15 @@
+{
+    "COLOR": "Color",
+    "SHUFFLE": "Shuffle",
+    "NO_OF_CLICKS": "No. of Clicks:",
+    "YOU_WON": "You Won!",
+    "PLAY_AGAIN": "Play again",
+    "HOW_TO_PLAY": "How to Play?",
+    "CLOSE": "Close",
+    "TIP1": "In the game, there are two rows of 4 circles each.",
+    "TIP2": "The top circles with a marker pointing down are the solution we have to achieve",
+    "TIP3": "The bottom circles are rotateable, and the player has to rotate them to match the quadrant with the respective above color",
+    "TIP4":  "Whenever a bottom circle is clicked it rotates in the right direction",
+    "TIP5": "Whenever a circle rotates, all it's adjacent circles rotate aswell",
+    "TIP6": "The aim of the player is to match the quadrant with the above color "
+  }

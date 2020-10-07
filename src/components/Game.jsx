@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 
 import { Wheel } from './Wheel';
+import { FormattedMessage } from 'react-intl';
 
 const colorToAngle = new Map([
   ['peachpuff', 45],
@@ -25,7 +26,7 @@ const generateInitialGameState = () => startAngles.map(() => random.pick(startAn
 export const Game = () => {
   const [solution, setSolution] = useState(generateSolution);
   const [gameState, setGameState] = useState(generateInitialGameState);
-  const [win, setWin] = useState(false);
+  const [win, setWin] = useState(true);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -98,20 +99,22 @@ export const Game = () => {
         </div>
         <div className="counter">
           <h5>
-            No. of Clicks: <span>{counter}</span>
+            <FormattedMessage id="NO_OF_CLICKS" /> <span>{counter}</span>
           </h5>
         </div>
       </div>
 
       {win && (
         <div className="msg">
-          <h1>You Won!</h1>
+          <h1>
+            <FormattedMessage id="YOU_WON" />
+          </h1>
         </div>
       )}
       {win && (
         <div className="play-again">
           <button className="btn" onClick={playAgain}>
-            Play Again
+            <FormattedMessage id="PLAY_AGAIN" />
           </button>
         </div>
       )}
