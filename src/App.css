@@ -64,6 +64,7 @@ body,
   align-items: center;
 }
 
+
 .color {
   margin: 10px;
   height: 70px;
@@ -72,11 +73,6 @@ body,
   margin-bottom: 0;
 }
 
-.markers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .mark {
   width: 0;

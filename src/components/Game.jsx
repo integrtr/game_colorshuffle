@@ -2,9 +2,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 import random from 'canvas-sketch-util/random';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 import { SpinCounter } from './SpinCounter';
 import { Win } from './Win';
+
+const spring = {
+  type: 'spring',
+  stiffness: 500,
+  damping: 30,
+};
 
 const colorToAngle = new Map([
   ['peachpuff', 45],
@@ -66,16 +73,22 @@ export function Game() {
   return (
     <>
       <div className={clsx('app', win && 'win')}>
-        <div className="answer">
-          {solution.map((color, index) => (
-            <div className="color" key={index} style={{ background: color }} index={index} />
-          ))}
-        </div>
-        <div className="markers">
-          {solution.map((color, index) => (
-            <div key={index} className="mark" style={{ borderTopColor: color }} index={{ index }} />
-          ))}
-        </div>
+        <AnimateSharedLayout>
+          <div className="answer">
+            {solution.map((color, index) => (
+              <motion.div
+                className="target"
+                layoutId={color}
+                initial={false}
+                transition={spring}
+                key={color}
+              >
+                <div className="color" style={{ background: color }} />
+                <div key={index} className="mark" style={{ borderTopColor: color }} />
+              </motion.div>
+            ))}
+          </div>
+        </AnimateSharedLayout>
         <div className="wheels">
           {colors.map((_, index) => (
             <Wheel
