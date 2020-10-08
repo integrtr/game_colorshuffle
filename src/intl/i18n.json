@@ -1,7 +1,7 @@
 {
     "COLOR": "Color",
     "SHUFFLE": "Shuffle",
-    "NO_OF_CLICKS": "No. of Clicks:",
+    "NO_OF_SPINS": "No. of Spins:",
     "YOU_WON": "You Won!",
     "PLAY_AGAIN": "Play again",
     "VISIT": "Visit INTEGRTR Translation Hub",
@@ -14,6 +14,6 @@
     "TIP3": "The circles on the bottom are rotatable, and the player has to rotate them to match the top quadrant with the color shown above",
     "TIP4":  "Whenever a bottom circle is clicked it rotates in the right direction and all it's adjacent circles also rotate.",
     "TIP5": "The player wins the game, if all the colors in the top quadrants of the circles in the bottom match with the ones above",
-    "TIP6": "There is a click counter, which shows the number of clicks you are using to solve the game. Try to solve the game in minimum amount of clicks",
+    "TIP6": "There is a click counter, which shows the number of spins you are using to solve the game. Try to solve the game in minimum amount of spins",
     "ABOUT": "ColorShuffle is a minimilistic game which demonstrates internationalization features of INTEGRTR Translation Hub. There is a blog written around how INTEGRTR Trnaslation Hub can be used on a React app, the link to the blog is given below."
   }
