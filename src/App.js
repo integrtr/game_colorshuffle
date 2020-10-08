@@ -4,15 +4,34 @@ import { IntlProvider } from 'react-intl';
 import './App.css';
 import { Game } from './components/Game';
 import { Options } from './components/Options';
-import en from './intl/i18n.json';
 import { GameName } from './components/GameName';
 import { ExternalLink } from './components/ExternalLink';
+import en from './intl/i18n.json';
+import de from './intl/i18n_de.json';
+import kn from './intl/i18n_kn.json';
+import bn from './intl/i18n_bn.json';
+import hi from './intl/i18n_hi.json';
 
 export default function App() {
   const lang = window.location.pathname.split('/')[1];
 
+  function mergeWithDefault(messages) {
+    return {
+      ...en,
+      ...messages,
+    };
+  }
+
   const selectedMessages = (lang) => {
     switch (lang) {
+      case 'de':
+        return mergeWithDefault(de);
+      case 'bn':
+        return mergeWithDefault(bn);
+      case 'hi':
+        return mergeWithDefault(hi);
+      case 'kn':
+        return mergeWithDefault(kn);
       case 'en':
       default:
         return en;
@@ -33,7 +52,7 @@ export default function App() {
     });
   };
 
-  const appLangs = ['en'];
+  const appLangs = ['en', 'de', 'bn', 'kn', 'hi'];
 
   return (
     <IntlProvider locale={locale.selectedLang} messages={locale.messages}>
