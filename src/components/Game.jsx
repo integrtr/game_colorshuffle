@@ -1,26 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
+import random from 'canvas-sketch-util/random';
 
-export const Game = ({
-  solution,
-  colorToAngle,
-  gameState,
-  getSafeAngle,
-  setWin,
-  setCounter,
-  setGameState,
-  win,
-  step,
-  colors,
-}) => {
+import { ClickCounter } from './ClickCounter';
+import { Win } from './Win';
+
+const colorToAngle = new Map([
+  ['peachpuff', 45],
+  ['paleturquoise', 45 + 90],
+  ['darkseagreen', 45 + 180],
+  ['lightcoral', 45 + 270],
+]);
+
+const step = 90;
+
+const getSafeAngle = (angle) => angle % 360;
+
+const startAngles = [...colorToAngle.values()];
+const colors = [...colorToAngle.keys()];
+
+const generateSolution = () => random.shuffle(colors);
+const generateInitialGameState = () => startAngles.map(() => random.pick(startAngles));
+
+export function Game() {
+  const [win, setWin] = useState(false);
+  const [counter, setCounter] = useState(0);
+  const [solution, setSolution] = useState(generateSolution);
+  const [gameState, setGameState] = useState(generateInitialGameState);
+
   useEffect(() => {
     const angleSolution = solution.map((color) => colorToAngle.get(color));
 
     if (isEqual(gameState.map(getSafeAngle), angleSolution)) {
       setWin(true);
     }
-  }, [gameState, solution, getSafeAngle, colorToAngle, setWin]);
+  }, [gameState, solution, setWin]);
 
   const rotate = (index) => {
     setCounter((prevState) => prevState + 1);
@@ -35,6 +50,16 @@ export const Game = ({
         })
       );
     }
+  };
+
+  if (win && counter === 0) {
+    setWin(false);
+  }
+
+  const playAgain = () => {
+    setSolution(generateSolution);
+    setGameState(generateInitialGameState);
+    setWin(false);
   };
 
   return (
@@ -62,9 +87,19 @@ export const Game = ({
           ))}
         </div>
       </div>
+      <ClickCounter counter={counter} />
+      <Win
+        win={win}
+        setSolution={setSolution}
+        setGameState={setGameState}
+        setWin={setWin}
+        generateSolution={generateSolution}
+        generateInitialGameState={generateInitialGameState}
+        playAgain={playAgain}
+      />
     </>
   );
-};
+}
 
 const Wheel = ({ onClick, index, angle, colors }) => (
   <button

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { MdLanguage } from 'react-icons/md';
 
-export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
+export function Options({ appLangs, updateLocaleState, locale }) {
   const [openDialog, setOpenDialog] = useState(false);
 
   let language;
@@ -97,4 +97,4 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
       )}
     </>
   );
-};
+}
