@@ -46,52 +46,56 @@ export function Options({ appLangs, updateLocaleState, locale }) {
           <h1>
             <FormattedMessage id="HOW_TO_PLAY" />
           </h1>
-          <ul>
-            <li>
-              <FormattedMessage id="TIP1" />
-            </li>
-            <li>
-              <FormattedMessage id="TIP2" />
-            </li>
-            <li>
-              <FormattedMessage id="TIP3" />
-            </li>
+          <div className="instructions">
+            <ul>
+              <li>
+                <FormattedMessage id="TIP1" />
+              </li>
+              <li>
+                <FormattedMessage id="TIP2" />
+              </li>
+              <li>
+                <FormattedMessage id="TIP3" />
+              </li>
 
-            <li>
-              <FormattedMessage id="TIP4" />
-            </li>
-            <li>
-              <FormattedMessage id="TIP5" />
-            </li>
-            <li>
-              <FormattedMessage id="TIP6" />
-            </li>
-          </ul>
-          <div className="about">
-            <h3>About</h3>
-            <p>
-              <FormattedMessage id="ABOUT" />
-            </p>
-          </div>
-          <div className="logo-container">
-            <div>
-              <div className="logo-text">
-                <FormattedMessage id="POWERED_BY" />
-              </div>
-              <img
-                className="logo"
-                src="https://cdn.integrtr.com/logos/integrtr_logo_dark.png"
-                alt="Integrtr Logo"
-              />
+              <li>
+                <FormattedMessage id="TIP4" />
+              </li>
+              <li>
+                <FormattedMessage id="TIP5" />
+              </li>
+              <li>
+                <FormattedMessage id="TIP6" />
+              </li>
+            </ul>
+            <div className="about">
+              <h3>About</h3>
+              <p>
+                <FormattedMessage id="ABOUT" />
+              </p>
             </div>
           </div>
-          <div className="dialog-actions">
-            <a href="www.example.com" className="view-blog">
-              <FormattedMessage id="VIEW_BLOG" />
-            </a>
-            <button className="close-btn" onClick={() => setOpenDialog(false)}>
-              <FormattedMessage id="CLOSE" />
-            </button>
+          <div className="actions">
+            <div className="logo-container">
+              <div>
+                <div className="logo-text">
+                  <FormattedMessage id="POWERED_BY" />
+                </div>
+                <img
+                  className="logo"
+                  src="https://cdn.integrtr.com/logos/integrtr_logo_dark.png"
+                  alt="Integrtr Logo"
+                />
+              </div>
+            </div>
+            <div className="dialog-actions">
+              <a href="www.example.com" className="view-blog">
+                <FormattedMessage id="VIEW_BLOG" />
+              </a>
+              <button className="close-btn" onClick={() => setOpenDialog(false)}>
+                <FormattedMessage id="CLOSE" />
+              </button>
+            </div>
           </div>
         </div>
       )}
