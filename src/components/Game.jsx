@@ -24,7 +24,7 @@ const generateSolution = () => random.shuffle(colors);
 const generateInitialGameState = () => startAngles.map(() => random.pick(startAngles));
 
 export function Game() {
-  const [win, setWin] = useState(false);
+  const [win, setWin] = useState(true);
   const [counter, setCounter] = useState(0);
   const [solution, setSolution] = useState(generateSolution);
   const [gameState, setGameState] = useState(generateInitialGameState);
@@ -32,10 +32,12 @@ export function Game() {
   useEffect(() => {
     const angleSolution = solution.map((color) => colorToAngle.get(color));
 
-    if (isEqual(gameState.map(getSafeAngle), angleSolution)) {
+    if (isEqual(gameState.map(getSafeAngle), angleSolution) && counter !== 0) {
       setWin(true);
+    } else {
+      setWin(false);
     }
-  }, [gameState, solution, setWin]);
+  }, [gameState, solution, setWin, counter]);
 
   const rotate = (index) => {
     setCounter((prevState) => prevState + 1);
@@ -51,10 +53,6 @@ export function Game() {
       );
     }
   };
-
-  if (win && counter === 0) {
-    setWin(false);
-  }
 
   const playAgain = () => {
     setSolution(generateSolution);
