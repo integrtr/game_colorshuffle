@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  outline-color: palegoldenrod;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  font-family: "Fredoka One", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #fffaf6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.game-title {
+  position: absolute;
+  font-size: 8vh;
+  font-family: 'Teko', sans-serif ;
+  top: 10vh
+}
+
+.game-title:nth-child(1) {
+  color:  lightcoral
+}
+
+.game-title span:nth-child(2) {
+  color: rgb(57, 214, 214)
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+.win {
+  filter: opacity(0.4);
+  cursor: not-allowed;
+}
+
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.color {
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+
+
+.mark {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  margin: 5px 30px;
+}
+
+.wheels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.wheel {
+  height: 70px;
+  width: 70px;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  transition: all 0.3s cubic-bezier(0.75, -0.5, 0, 1.75);
+  cursor: pointer;
+}
+
+.wheel .quadrant {
+  height: 35px;
+  width: 35px;
+}
+
+.quadrant:nth-child(1) {
+  border-top-left-radius: 9999999px;
+  background: peachpuff;
+}
+.quadrant:nth-child(2) {
+  border-top-right-radius: 9999999px;
+  background: lightcoral;
+}
+.quadrant:nth-child(3) {
+  border-bottom-left-radius: 9999999px;
+  background: paleturquoise;
+}
+.quadrant:nth-child(4) {
+  border-bottom-right-radius: 9999999px;
+  background: darkseagreen;
+}
+
+.msg {
+  position: absolute;
+  z-index: 1;  
+  cursor: not-allowed;
+  font-family: 'Teko', sans-serif ;  
+  margin-top: -140px;
+}
+
+.msg > h1{
+  font-size: 11vh;
+  color:lightcoral;
+}
+
+.play-again {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 20vh;
+}
+
+.btn {
+  width: 40vh;
+  height: 8vh;
+  border-radius: 0.6vh;
+  background:rgb(57, 214, 214);
+  font-size: 4vh;
+  color: #153737;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Teko', sans-serif ;
+  box-shadow: inset 0px -4px 2px 0px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .counter {
+    text-align: center; 
+    margin-top: 5vh;
+    font-size: 4vh;
+    color: lightcoral ;
+    font-family: 'Teko', sans-serif ;
+  }
+
+  .options {
+    position: absolute;
+    right: 1vh;
+    top: 1vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .how-to-play-btn {
+    padding: 7px;
+    border-radius: 5px;
+    background-color: lightcoral;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 1vh
+  }
+
+    .dialog-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    padding: 10px;
+    width: 90%;
+    height: 95%;
+    padding-bottom: 50px;
+    background-color: white;
+    box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);}
+  
+  .dialog-box > h1 {
+    font-family: 'Teko', sans-serif ;
+    color: lightcoral;
+    font-size: 4vh;
+  }
+  
+  ul{
+    list-style: none;   
+    overflow-y: auto;
+    height: 60%;
+
+  }
+
+  .instructions {
+    height: 83%;
+  }
+
+  ul > li {
+    background-color: rgb(246, 246, 246);
+    margin: 0.8vh;
+    padding: 1.5vh;
+    border-radius: 5px;
+    color: rgb(78, 78, 78);
+    text-align: justify;
+    font-size: 2vh;
+  }
+  
+  .about {
+    margin-top: 1vh;
+    background-color: #c6fdee;
+    padding: 1.5vh;
+    border-radius: 5px;
+    color: rgb(78, 78, 78);
+    text-align: justify;
+    font-size: 2vh;
+  }
+  
+  .about h3 {
+    text-align: center;
+  }
+
+  .about p {
+    margin-top: 0.8vh;
+  }
+
+.actions {
+  width: 100%;
+}
+
+  .dialog-actions {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+  }
+
+.close-btn {
+    padding: 0.5vh;
+    background-color: lightcoral;
+    color: white;
+    width: 10vh;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius: 0.5vh;
+    cursor: pointer;    
+
+  }
+
+.view-blog {
+  padding: 0.5vh;
+  text-decoration: none;
+  background-color: #11ae83;
+  color: white;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  width: 12vh;
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 212, 212);
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 6vh;
+  color: rgb(233, 104, 104);
+  font-size: 2vh;
+}
+
+
+select{
+  background-color: transparent;
+  font-size: 1.6vh;  
+  appearance:none;
+  color: rgb(2, 2, 2);
+  cursor: pointer;
+  color: rgb(233, 104, 104);
+}
+
+.logo-container{
+  display: flex;
+  width: 93%;
+  justify-content: center;
+}
+
+.logo-text {
+  text-align: center;
+  color:rgb(148, 148, 148);
+  font-size: 1.5vh;
+}
+
+.logo {
+  width: 120px; 
+}
+
+.thub-url {
+  color: #11ae83;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.4vh;
+  border-radius: 0.5vh;
+  font-weight: 600;
+}
+
+.visit-thub {
+ position: absolute;
+ bottom: 3vh;
+}
+
+
+@media (min-width: 560px) {
+  .container {
+    width: 560px;
+  }
+}
+
