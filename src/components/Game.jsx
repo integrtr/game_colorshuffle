@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 import random from 'canvas-sketch-util/random';
 
-import { ClickCounter } from './ClickCounter';
+import { SpinCounter } from './SpinCounter';
 import { Win } from './Win';
 
 const colorToAngle = new Map([
@@ -88,7 +88,7 @@ export function Game() {
           ))}
         </div>
       </div>
-      <ClickCounter counter={counter} />
+      <SpinCounter counter={counter} />
       <Win win={win} playAgain={playAgain} />
     </>
   );

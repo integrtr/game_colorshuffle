@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export function ClickCounter({ counter }) {
+export function SpinCounter({ counter }) {
   return (
     <div className="counter">
       <h5>
