@@ -66,13 +66,13 @@ export function Options({ appLangs, updateLocaleState, locale }) {
             <li>
               <FormattedMessage id="TIP6" />
             </li>
-            <li>
-              <h3>About</h3>
-              <p>
-                <FormattedMessage id="ABOUT" />
-              </p>
-            </li>
           </ul>
+          <div className="about">
+            <h3>About</h3>
+            <p>
+              <FormattedMessage id="ABOUT" />
+            </p>
+          </div>
           <div className="logo-container">
             <div>
               <div className="logo-text">

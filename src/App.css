@@ -42,7 +42,7 @@ body,
 }
 
 .game-title span:nth-child(2) {
-  color: rgb(129, 248, 248)
+  color: rgb(57, 214, 214)
 }
 
 .app {
@@ -153,13 +153,17 @@ body,
   width: 40vh;
   height: 8vh;
   border-radius: 0.6vh;
-  background:rgb(129, 248, 248);
+  background:rgb(57, 214, 214);
   font-size: 4vh;
-  color: white;
+  color: #153737;
   padding: 10px;
   cursor: pointer;
   font-family: 'Teko', sans-serif ;
-  box-shadow: inset 0px -9px 2px 0px rgba(0,0,0,0.35);}
+  box-shadow: inset 0px -4px 2px 0px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .counter {
     text-align: center; 
@@ -208,29 +212,36 @@ body,
   
   .dialog-box > ul{
     list-style: none;
+    height: 60%;
+  overflow-y: auto;
   }
 
   ul > li {
     background-color: rgb(246, 246, 246);
-    margin: 8px;
-    padding: 13px;
+    margin: 0.8vh;
+    padding: 1.5vh;
     border-radius: 5px;
     color: rgb(78, 78, 78);
     text-align: justify;
+    font-size: 2vh;
   }
   
-  ul > li:last-child {
-    margin-top: 35px;
-    height: 150px;
-    background-color: #c6fdee;;
+  .about {
+    margin-top: 1vh;
+    background-color: #c6fdee;
+    padding: 1.5vh;
+    border-radius: 5px;
+    color: rgb(78, 78, 78);
+    text-align: justify;
+    font-size: 2vh;
   }
   
-  ul > li:last-child h3 {
+  .about h3 {
     text-align: center;
   }
 
-  ul > li:last-child p {
-    margin-top: 8px;
+  .about p {
+    margin-top: 0.8vh;
   }
 
   .dialog-actions {
@@ -289,10 +300,11 @@ select{
 }
 
 .logo-container{
+  position: absolute;
+  bottom: 4vh;
   display: flex;
   width: 93%;
   justify-content: center;
-  margin-top: 2vh;
   
 }
 
