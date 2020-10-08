@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 import random from 'canvas-sketch-util/random';
@@ -24,20 +24,29 @@ const generateSolution = () => random.shuffle(colors);
 const generateInitialGameState = () => startAngles.map(() => random.pick(startAngles));
 
 export function Game() {
-  const [win, setWin] = useState(true);
+  const [win, setWin] = useState(false);
   const [counter, setCounter] = useState(0);
   const [solution, setSolution] = useState(generateSolution);
   const [gameState, setGameState] = useState(generateInitialGameState);
 
+  const playAgain = useCallback(() => {
+    setSolution(generateSolution);
+    setGameState(generateInitialGameState);
+    setWin(false);
+    setCounter(0);
+  }, []);
+
   useEffect(() => {
     const angleSolution = solution.map((color) => colorToAngle.get(color));
 
-    if (isEqual(gameState.map(getSafeAngle), angleSolution) && counter !== 0) {
-      setWin(true);
-    } else {
-      setWin(false);
+    if (isEqual(gameState.map(getSafeAngle), angleSolution)) {
+      if (counter > 0) {
+        setWin(true);
+      } else {
+        playAgain();
+      }
     }
-  }, [gameState, solution, setWin, counter]);
+  }, [gameState, solution, setWin, counter, playAgain]);
 
   const rotate = (index) => {
     setCounter((prevState) => prevState + 1);
@@ -52,12 +61,6 @@ export function Game() {
         })
       );
     }
-  };
-
-  const playAgain = () => {
-    setSolution(generateSolution);
-    setGameState(generateInitialGameState);
-    setWin(false);
   };
 
   return (
@@ -86,15 +89,7 @@ export function Game() {
         </div>
       </div>
       <ClickCounter counter={counter} />
-      <Win
-        win={win}
-        setSolution={setSolution}
-        setGameState={setGameState}
-        setWin={setWin}
-        generateSolution={generateSolution}
-        generateInitialGameState={generateInitialGameState}
-        playAgain={playAgain}
-      />
+      <Win win={win} playAgain={playAgain} />
     </>
   );
 }

@@ -1,15 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export function Win({
-  win,
-  setSolution,
-  setGameState,
-  setWin,
-  generateSolution,
-  generateInitialGameState,
-  playAgain,
-}) {
+export function Win({ win, playAgain }) {
   return (
     win && (
       <>
