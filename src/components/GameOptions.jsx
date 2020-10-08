@@ -66,6 +66,12 @@ export const GameOptions = ({ appLangs, updateLocaleState, locale }) => {
             <li>
               <FormattedMessage id="TIP6" />
             </li>
+            <li>
+              <h3>About</h3>
+              <p>
+                <FormattedMessage id="ABOUT" />
+              </p>
+            </li>
           </ul>
           <div className="logo-container">
             <div>

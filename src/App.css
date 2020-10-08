@@ -211,11 +211,26 @@ body,
   }
 
   ul > li {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(246, 246, 246);
     margin: 8px;
-    padding: 10px;
+    padding: 13px;
     border-radius: 5px;
     color: rgb(78, 78, 78);
+    text-align: justify;
+  }
+  
+  ul > li:last-child {
+    margin-top: 35px;
+    height: 150px;
+    background-color: #c6fdee;;
+  }
+  
+  ul > li:last-child h3 {
+    text-align: center;
+  }
+
+  ul > li:last-child p {
+    margin-top: 8px;
   }
 
   .dialog-actions {
@@ -277,7 +292,7 @@ select{
   display: flex;
   width: 93%;
   justify-content: center;
-  margin-top: 3vh;
+  margin-top: 2vh;
   
 }
 
