@@ -1,0 +1,19 @@
+{
+  "COLOR": "Farbe",
+  "SHUFFLE": "Mischen",
+  "NO_OF_SPINS": "Anzahl der Drehungen:",
+  "YOU_WON": "Du hast gewonnen!",
+  "PLAY_AGAIN": "Nochmal abspielen",
+  "VISIT": "Besuchen Sie den INTEGRTR Translation Hub",
+  "HOW_TO_PLAY": "Spielanleitung?",
+  "POWERED_BY": "Unterstützt von",
+  "VIEW_BLOG": "Blog anzeigen",
+  "CLOSE": "Schließen",
+  "TIP1": "ColorShuffle ist ein Spiel, bei dem Sie die unteren Kreise drehen und den oberen Quadranten an die oben gezeigten Farben anpassen müssen",
+  "TIP2": "Die Kreise oben sind die Lösungen und der Spieler muss den oberen Quadranten des unteren Kreises mit ihnen abgleichen.",
+  "TIP3": "Die Kreise unten sind drehbar, und der Spieler muss sie drehen, um den oberen Quadranten mit der oben gezeigten Farbe abzugleichen",
+  "TIP4": "Wenn auf einen unteren Kreis geklickt wird, dreht er sich in die richtige Richtung und alle angrenzenden Kreise drehen sich ebenfalls.",
+  "TIP5": "Der Spieler gewinnt das Spiel, wenn alle Farben in den oberen Quadranten der Kreise unten mit den oben genannten übereinstimmen",
+  "TIP6": "Es gibt einen Klickzähler, der die Anzahl der Drehungen anzeigt, mit denen Sie das Spiel lösen. Versuchen Sie, das Spiel mit einer minimalen Anzahl von Drehungen zu lösen",
+  "ABOUT": "ColorShuffle ist ein minimalistisches Spiel, das die Internationalisierungsfunktionen von INTEGRTR Translation Hub demonstriert. Es gibt einen Blog darüber, wie INTEGRTR Trnaslation Hub in einer React-App verwendet werden kann. Der Link zum Blog ist unten angegeben."
+}
