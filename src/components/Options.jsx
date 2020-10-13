@@ -5,12 +5,13 @@ import { MdLanguage } from 'react-icons/md';
 export function Options({ appLangs, updateLocaleState, locale }) {
   const [openDialog, setOpenDialog] = useState(false);
 
-  let language;
-  if (appLangs.find((lang) => lang === locale.selectedLang)) {
-    language = locale.selectedLang;
-  } else {
-    language = 'en';
-  }
+  const isLanguageSelected = (lang) => {
+    if (appLangs.find((lang) => lang === locale.selectedLang)) {
+      return lang === locale.selectedLang;
+    } else {
+      return lang === 'en';
+    }
+  };
 
   return (
     <>
@@ -19,15 +20,11 @@ export function Options({ appLangs, updateLocaleState, locale }) {
           <MdLanguage />
           <div>
             <select onChange={updateLocaleState} name="locale" id="locale">
-              <option value={language}>{language}</option>
-              {appLangs.map(
-                (lang) =>
-                  lang !== language && (
-                    <option key={lang} value={lang}>
-                      {lang}
-                    </option>
-                  )
-              )}
+              {appLangs.map((lang) => (
+                <option key={lang} value={lang} selected={isLanguageSelected(lang)}>
+                  {lang}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -60,12 +57,6 @@ export function Options({ appLangs, updateLocaleState, locale }) {
 
               <li>
                 <FormattedMessage id="TIP4" />
-              </li>
-              <li>
-                <FormattedMessage id="TIP5" />
-              </li>
-              <li>
-                <FormattedMessage id="TIP6" />
               </li>
             </ul>
             <div className="about">
