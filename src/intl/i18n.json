@@ -9,11 +9,9 @@
     "POWERED_BY": "Powered by",
     "VIEW_BLOG": "View Blog",
     "CLOSE": "Close",
-    "TIP1": "ColorShuffle is a game where you have to rotate the bottom circles and make the top quadrant match the colors shown above",
-    "TIP2": "The circles on the top are the solutions and the player have to match the top quadrant of the lower circle with them.",
-    "TIP3": "The circles on the bottom are rotatable, and the player has to rotate them to match the top quadrant with the color shown above",
-    "TIP4":  "Whenever a bottom circle is clicked it rotates in the right direction and all it's adjacent circles also rotate.",
-    "TIP5": "The player wins the game, if all the colors in the top quadrants of the circles in the bottom match with the ones above",
-    "TIP6": "There is a click counter, which shows the number of spins you are using to solve the game. Try to solve the game in minimum amount of spins",
-    "ABOUT": "ColorShuffle is a minimilistic game which demonstrates internationalization features of INTEGRTR Translation Hub. There is a blog written around how INTEGRTR Trnaslation Hub can be used on a React app, the link to the blog is given below."
+    "TIP1": "You have to rotate the circles in the second row by clicking/tapping on them and match the upper quadrant of the circle with the color displayed above",
+    "TIP2": "Everytime you click/tap a circle, the adjacent circles rotate as well.",
+    "TIP3": "There is a spin counter, which shows the number of spins you are using to solve the game.",
+    "TIP4":  "All you have to do to win is, get all the upper quadrants of the circles match with the respective color displayed above in minimum spins possible",
+    "ABOUT": "ColorShuffle is a minimalistic game which demonstrates internationalization features of INTEGRTR Translation Hub. There is a blog written around how INTEGRTR Translation Hub can be used on a React app, the link to the blog is given below."
   }

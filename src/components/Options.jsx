@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { MdLanguage } from 'react-icons/md';
 
+const isLanguageSelected = ({ lang, appLangs, locale }) => {
+  if (appLangs.find((lang) => lang === locale.selectedLang)) {
+    return lang === locale.selectedLang;
+  } else {
+    return lang === 'en';
+  }
+};
+
 export function Options({ appLangs, updateLocaleState, locale }) {
   const [openDialog, setOpenDialog] = useState(false);
-
-  let language;
-  if (appLangs.find((lang) => lang === locale.selectedLang)) {
-    language = locale.selectedLang;
-  } else {
-    language = 'en';
-  }
 
   return (
     <>
@@ -19,15 +20,15 @@ export function Options({ appLangs, updateLocaleState, locale }) {
           <MdLanguage />
           <div>
             <select onChange={updateLocaleState} name="locale" id="locale">
-              <option value={language}>{language}</option>
-              {appLangs.map(
-                (lang) =>
-                  lang !== language && (
-                    <option key={lang} value={lang}>
-                      {lang}
-                    </option>
-                  )
-              )}
+              {appLangs.map((lang) => (
+                <option
+                  key={lang}
+                  value={lang}
+                  selected={isLanguageSelected({ lang, appLangs, locale })}
+                >
+                  {lang}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -60,12 +61,6 @@ export function Options({ appLangs, updateLocaleState, locale }) {
 
               <li>
                 <FormattedMessage id="TIP4" />
-              </li>
-              <li>
-                <FormattedMessage id="TIP5" />
-              </li>
-              <li>
-                <FormattedMessage id="TIP6" />
               </li>
             </ul>
             <div className="about">
