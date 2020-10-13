@@ -197,9 +197,9 @@ body,
     padding: 10px;
     width: 90%;
     height: 95%;
-    padding-bottom: 50px;
     background-color: white;
-    box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);}
+    box-shadow: 2px 4px 6px -1px rgba(163,163,163,0.59);
+  }
   
   .dialog-box > h1 {
     font-family: 'Teko', sans-serif ;
@@ -215,8 +215,17 @@ body,
   }
 
   .instructions {
-    height: 83%;
+    width: 100%;
+    height: 80%;
   }
+
+  
+.actions {
+  position: absolute;
+  bottom: 1vh;
+  width: 95%;
+  margin: 0.8vh;
+}
 
   ul > li {
     background-color: rgb(246, 246, 246);
@@ -229,13 +238,15 @@ body,
   }
   
   .about {
-    margin-top: 1vh;
+    margin: 0.8vh;
     background-color: #c6fdee;
     padding: 1.5vh;
     border-radius: 5px;
     color: rgb(78, 78, 78);
     text-align: justify;
     font-size: 2vh;
+    height: 25vh;
+    overflow-y: auto;
   }
   
   .about h3 {
@@ -245,10 +256,6 @@ body,
   .about p {
     margin-top: 0.8vh;
   }
-
-.actions {
-  width: 100%;
-}
 
   .dialog-actions {
    display: flex;
@@ -275,7 +282,7 @@ body,
   color: white;
   border-radius: 0.5vh;
   cursor: pointer;
-  width: 12vh;
+  min-width: 12vh;
   font-size: 2vh;
   display: flex;
   align-items: center;
@@ -306,7 +313,7 @@ select{
 
 .logo-container{
   display: flex;
-  width: 93%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -338,6 +345,13 @@ select{
 @media (min-width: 560px) {
   .container {
     width: 560px;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .instructions {
+    height: 70%;
   }
 }
 
