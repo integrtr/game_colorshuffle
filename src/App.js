@@ -12,31 +12,33 @@ import de from './intl/i18n_de.json';
 import hi from './intl/i18n_hi.json';
 import kn from './intl/i18n_kn.json';
 
+function mergeWithDefault(messages) {
+  return {
+    ...en,
+    ...messages,
+  };
+}
+
+const selectedMessages = (lang) => {
+  switch (lang) {
+    case 'de':
+      return mergeWithDefault(de);
+    case 'bn':
+      return mergeWithDefault(bn);
+    case 'hi':
+      return mergeWithDefault(hi);
+    case 'kn':
+      return mergeWithDefault(kn);
+    case 'en':
+    default:
+      return en;
+  }
+};
+
+const appLangs = ['en', 'bn', 'de', 'hi', 'kn'];
+
 export default function App() {
   const lang = window.location.pathname.split('/')[1];
-
-  function mergeWithDefault(messages) {
-    return {
-      ...en,
-      ...messages,
-    };
-  }
-
-  const selectedMessages = (lang) => {
-    switch (lang) {
-      case 'de':
-        return mergeWithDefault(de);
-      case 'bn':
-        return mergeWithDefault(bn);
-      case 'hi':
-        return mergeWithDefault(hi);
-      case 'kn':
-        return mergeWithDefault(kn);
-      case 'en':
-      default:
-        return en;
-    }
-  };
 
   const [locale, setLocale] = useState({
     selectedLang: lang ? lang : 'en',
@@ -51,8 +53,6 @@ export default function App() {
       messages: selectedMessages(lang),
     });
   };
-
-  const appLangs = ['en', 'bn', 'de', 'hi', 'kn'];
 
   return (
     <IntlProvider locale={locale.selectedLang} messages={locale.messages}>

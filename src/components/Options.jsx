@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { MdLanguage } from 'react-icons/md';
 
+const isLanguageSelected = ({ lang, appLangs, locale }) => {
+  if (appLangs.find((lang) => lang === locale.selectedLang)) {
+    return lang === locale.selectedLang;
+  } else {
+    return lang === 'en';
+  }
+};
+
 export function Options({ appLangs, updateLocaleState, locale }) {
   const [openDialog, setOpenDialog] = useState(false);
-
-  const isLanguageSelected = (lang) => {
-    if (appLangs.find((lang) => lang === locale.selectedLang)) {
-      return lang === locale.selectedLang;
-    } else {
-      return lang === 'en';
-    }
-  };
 
   return (
     <>
@@ -21,7 +21,11 @@ export function Options({ appLangs, updateLocaleState, locale }) {
           <div>
             <select onChange={updateLocaleState} name="locale" id="locale">
               {appLangs.map((lang) => (
-                <option key={lang} value={lang} selected={isLanguageSelected(lang)}>
+                <option
+                  key={lang}
+                  value={lang}
+                  selected={isLanguageSelected({ lang, appLangs, locale })}
+                >
                   {lang}
                 </option>
               ))}
