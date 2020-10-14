@@ -84,7 +84,12 @@ export function Options({ appLangs, updateLocaleState, locale }) {
               </div>
             </div>
             <div className="dialog-actions">
-              <a href="www.example.com" className="view-blog">
+              <a
+                href="https://www.integrtr.com/using-translation-hub-with-react/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="view-blog"
+              >
                 <FormattedMessage id="VIEW_BLOG" />
               </a>
               <button className="close-btn" onClick={() => setOpenDialog(false)}>

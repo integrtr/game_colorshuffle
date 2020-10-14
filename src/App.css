@@ -294,7 +294,7 @@ body,
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 212, 212);
-  padding: 5px;
+  padding: 7px;
   border-radius: 5px;
   min-width: 6vh;
   color: rgb(233, 104, 104);
@@ -309,6 +309,8 @@ select{
   color: rgb(2, 2, 2);
   cursor: pointer;
   color: rgb(233, 104, 104);
+  width: 40px;
+  padding: 0 10px 0 5px ;
 }
 
 .logo-container{
