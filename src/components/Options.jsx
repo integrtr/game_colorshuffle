@@ -85,7 +85,7 @@ export function Options({ appLangs, updateLocaleState, locale }) {
             </div>
             <div className="dialog-actions">
               <a
-                href="https://www.integrtr.com/using-translation-hub-with-react "
+                href="https://www.integrtr.com/using-translation-hub-with-react/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="view-blog"
