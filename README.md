@@ -2,7 +2,7 @@
 
 ## What's it about?
 
-Use-case: A minimilistic game to play and demonstrate internationalization features of INTEGRTR Translation Hub
+Use-case: A minimilistic game to play and demonstrate internationalization features of [INTEGRTR Translation Hub](https://translate.integrtr.com). Check out the [blog here](https://www.integrtr.com/using-translation-hub-with-react/) if you are interested in learning how it was built.
 
 ![image](https://user-images.githubusercontent.com/65528802/95340001-4cd34280-08d2-11eb-8f1a-343badc68b33.png)
 
@@ -27,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Additional References: 
 
-* Blog - < Coming Up Soon >
+* Blog - [INTEGRTR Translation Hub - Internationalize your React App](https://www.integrtr.com/using-translation-hub-with-react/)
 * INTEGRTR Translation Hub - [INTEGRTR Translation Hub](https://translate.integrtr.com)
 
 
