@@ -56,8 +56,9 @@ export function Game() {
   }, [gameState, solution, setWin, counter, playAgain]);
 
   const rotate = (index) => {
-    setCounter((prevState) => prevState + 1);
     if (!win) {
+      setCounter((prevState) => prevState + 1);
+
       setGameState((state) =>
         state.map((val, i) => {
           if (i === index - 1 || i === index || i === index + 1) {
