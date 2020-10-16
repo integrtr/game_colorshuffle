@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { MdLanguage } from 'react-icons/md';
+import {GoMarkGithub} from 'react-icons/go'
 
 const isLanguageSelected = ({ lang, appLangs, locale }) => {
   if (appLangs.find((lang) => lang === locale.selectedLang)) {
@@ -91,6 +92,15 @@ export function Options({ appLangs, updateLocaleState, locale }) {
                 className="view-blog"
               >
                 <FormattedMessage id="VIEW_BLOG" />
+              </a>
+              <a
+                href="https://github.com/integrtr/game_colorshuffle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="view-source-code"
+              >
+                <GoMarkGithub className="github-icon" size="23px"/>
+                <FormattedMessage id="VIEW_CODE" />
               </a>
               <button className="close-btn" onClick={() => setOpenDialog(false)}>
                 <FormattedMessage id="CLOSE" />

@@ -289,6 +289,24 @@ body,
   justify-content: center;
 }
 
+.view-source-code {
+  padding: 0.5vh 1vh;
+  text-decoration: none;
+  background-color: #242424;
+  color: white;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  min-width: 10vh;
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon {
+  margin-right: 10px;
+}
+
 .language {
   display: flex;
   align-items: center;
